@@ -19,5 +19,17 @@ RSpec.describe Customer, type: :model do
     expect(customer.name).to eq('Alan Alves')
   end
 
+  # inheritance with FactoryBot
+  it 'Vip true' do
+    customer = create(:customer_vip)
+    expect(customer.vip).to eq(true)
+  end
+
+  # inheritance with FactoryBot
+  it 'Vip false' do
+    customer = create(:customer_default)
+    expect(customer.vip).to eq(false)
+  end
+
   it { expect { create(:customer) }.to change{ Customer.all.size }.by(1) }
 end
