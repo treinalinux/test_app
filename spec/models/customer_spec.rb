@@ -13,5 +13,11 @@ RSpec.describe Customer, type: :model do
     expect(customer.name).to start_with('')
   end
 
+  it 'Overwrite Attribute' do
+    # the user is an alias of customer
+    customer = create(:user, name: 'Alan Alves')
+    expect(customer.name).to eq('Alan Alves')
+  end
+
   it { expect { create(:customer) }.to change{ Customer.all.size }.by(1) }
 end
