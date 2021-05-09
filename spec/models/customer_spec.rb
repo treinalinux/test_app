@@ -31,5 +31,14 @@ RSpec.describe Customer, type: :model do
     expect(customer.vip).to eq(false)
   end
 
+  it 'use atrributes_for' do
+    attrs1 = attributes_for(:customer)
+    attrs2 = attributes_for(:customer_vip)
+    attrs3 = attributes_for(:customer_default)
+    puts attrs1
+    puts attrs2
+    puts attrs3
+  end
+
   it { expect { create(:customer) }.to change{ Customer.all.size }.by(1) }
 end
