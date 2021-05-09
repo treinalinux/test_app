@@ -40,5 +40,10 @@ RSpec.describe Customer, type: :model do
     puts attrs3
   end
 
+  it 'Attribute trasient' do
+    customer = create(:customer_default, upcased: true)
+    expect(customer.name.upcase).to eq(customer.name)
+  end
+
   it { expect { create(:customer) }.to change{ Customer.all.size }.by(1) }
 end
