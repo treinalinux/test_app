@@ -18,6 +18,9 @@ FactoryBot.define do
     # sequence (:email, 'a') { |n| "my_email-#{n}@jobs.corp" }
     sequence (:email) { |n| "my_email-#{n}@jobs.corp" }
 
+    # Added for test address with FactoryBot.Lint
+    address { Faker::Address.street_address }
+
     # gender { %w[M F].sample }
     # Help trait
     trait :female do
