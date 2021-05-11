@@ -8,9 +8,16 @@ FactoryBot.define do
 
     # always use blocks { ... }, the use normally for dynamics, because always use
     name { Faker::Name.name }
-    email { Faker::Internet.email }
-    # gender { %w[M F].sample }
+    # email { Faker::Internet.email }
 
+    # Working sequence
+    # A sequence starting for number 10
+    # sequence (:email, 10) { |n| "my_email-#{n}@jobs.corp" }
+    # A sequence with method next
+    # sequence (:email, 'a') { |n| "my_email-#{n}@jobs.corp" }
+    sequence (:email) { |n| "my_email-#{n}@jobs.corp" }
+
+    # gender { %w[M F].sample }
     # Help trait
     trait :female do
       gender { 'F' }

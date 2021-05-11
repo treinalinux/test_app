@@ -10,6 +10,8 @@ RSpec.describe Customer, type: :model do
     # line used when use fixtures
     # customer = customers(:alan)
     customer = create(:customer)
+    # Show a sequence how example
+    # puts customer.email
     expect(customer.name).to start_with('')
   end
 
@@ -31,7 +33,7 @@ RSpec.describe Customer, type: :model do
     expect(customer.vip).to eq(false)
   end
 
-  it 'use atrributes_for' do
+  it 'use attributes_for' do
     attrs1 = attributes_for(:customer)
     attrs2 = attributes_for(:customer_vip)
     attrs3 = attributes_for(:customer_default)
