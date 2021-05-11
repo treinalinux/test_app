@@ -6,10 +6,12 @@ FactoryBot.define do
       upcased { false }
     end
 
+    # always use blocks { ... }, the use normally for dynamics, because always use
     name { Faker::Name.name }
     email { Faker::Internet.email }
     # gender { %w[M F].sample }
 
+    # Help trait
     trait :female do
       gender { 'F' }
     end
@@ -38,6 +40,7 @@ FactoryBot.define do
     factory :customer_male_default, traits: %i[female default]
 
     after(:create) do |customer, evaluator|
+      # run only after all salve
       customer.name.upcase! if evaluator.upcased
     end
   end
