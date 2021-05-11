@@ -13,7 +13,7 @@ FactoryBot.define do
     # Working sequence
     # A sequence starting for number 10
     # sequence (:email, 10) { |n| "my_email-#{n}@jobs.corp" }
-    # A sequence with method next
+    # A sequence with method next (a, call next for b, c ...)
     # sequence (:email, 'a') { |n| "my_email-#{n}@jobs.corp" }
     sequence (:email) { |n| "my_email-#{n}@jobs.corp" }
 
