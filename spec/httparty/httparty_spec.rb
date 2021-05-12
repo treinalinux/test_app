@@ -3,7 +3,7 @@
 require 'httparty'
 
 describe 'HTTParty' do
-  it 'HTTParty' do
+  it 'contet-type', :vcr do
     # stub_request(:get, 'https://jsonplaceholder.typicode.com/posts/1')
       # .with(
       #   headers: {
@@ -14,10 +14,10 @@ describe 'HTTParty' do
       # )
     # .to_return(status: 200, body: '', headers: { 'content-type': 'application/json' })
 
-    VCR.use_cassette('jsponplaceholder/posts') do
-      response = HTTParty.get('https://jsonplaceholder.typicode.com/posts/1')
-      content_type = response.headers['content-type']
-      expect(content_type).to match(%r{application/json})
-    end
+    # VCR.use_cassette('jsponplaceholder/posts') do
+    response = HTTParty.get('https://jsonplaceholder.typicode.com/posts/1')
+    content_type = response.headers['content-type']
+    expect(content_type).to match(%r{application/json})
+    # end
   end
 end
