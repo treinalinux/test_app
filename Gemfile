@@ -39,6 +39,7 @@ group :development, :test do
   gem 'httparty'
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
