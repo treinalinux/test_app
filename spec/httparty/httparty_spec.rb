@@ -3,7 +3,7 @@
 require 'httparty'
 
 describe 'HTTParty' do
-  it 'contet-type', :vcr do
+  it 'content-type', :vcr do
     # stub_request(:get, 'https://jsonplaceholder.typicode.com/posts/1')
       # .with(
       #   headers: {
