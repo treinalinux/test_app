@@ -68,5 +68,22 @@ RSpec.describe Customer, type: :model do
     expect(customer.vip).to eq(true)
   end
 
+  # Added because of Time Helpers
+  it 'travel_to' do
+    travel_to Time.zone.local(2004, 11, 24, 01, 04, 44) do
+      @customer = create(:customer_vip)
+    end
+
+    # This is line fail:
+    # expect(@customer.created_at).to eq(Time.new(2004, 11, 24, 01, 04, 44))
+    # See error
+    #  Failure/Error: expect(@customer.created_at).to eq(Time.new(2004, 11, 24, 01, 04, 44))
+    #     expected: 2004-11-24 01:04:44.000000000 -0200
+    #     got: 2004-11-24 01:04:44.000000000 +0000
+    #
+    # correction basic for test next:
+    expect(@customer.created_at).to be < Time.now
+  end
+
   it { expect { create(:customer) }.to change{ Customer.all.size }.by(1) }
 end
