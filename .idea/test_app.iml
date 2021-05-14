@@ -40,6 +40,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v6.1.3.2, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v6.1.3.2, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.7.0, asdf: 2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.16, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.7.5, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, asdf: 2.7.2) [gem]" level="application" />
@@ -49,6 +50,7 @@
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.8, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crack (v0.4.5, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.6, asdf: 2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="devise (v4.8.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.4.4, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubi (v1.10.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="factory_bot (v6.2.0, asdf: 2.7.2) [gem]" level="application" />
@@ -73,6 +75,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.7, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.11.3, asdf: 2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v4.0.6, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.3.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.5.2, asdf: 2.7.2) [gem]" level="application" />
@@ -88,6 +91,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.1.1, asdf: 2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="responders (v3.0.1, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.5, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v3.10.1, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.10.1, asdf: 2.7.2) [gem]" level="application" />
@@ -110,6 +114,7 @@
     <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.2.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.4, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="vcr (v6.0.0, asdf: 2.7.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.9, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.1.0, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webmock (v3.12.2, asdf: 2.7.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webpacker (v5.3.0, asdf: 2.7.2) [gem]" level="application" />
@@ -126,11 +131,16 @@
     <option name="generators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:devise" />
         <option value="application_record" />
         <option value="assets" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="factory_bot:model" />
         <option value="generator" />
         <option value="helper" />
@@ -141,8 +151,11 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="mongoid:devise" />
         <option value="rack_profiler:install" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
         <option value="rspec:channel" />
         <option value="rspec:controller" />
         <option value="rspec:feature" />
@@ -180,11 +193,16 @@
     <option name="myGenerators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:devise" />
         <option value="application_record" />
         <option value="assets" />
         <option value="benchmark" />
         <option value="channel" />
         <option value="controller" />
+        <option value="devise" />
+        <option value="devise:controllers" />
+        <option value="devise:install" />
+        <option value="devise:views" />
         <option value="factory_bot:model" />
         <option value="generator" />
         <option value="helper" />
@@ -195,8 +213,11 @@
         <option value="mailer" />
         <option value="migration" />
         <option value="model" />
+        <option value="mongoid:devise" />
         <option value="rack_profiler:install" />
         <option value="resource" />
+        <option value="responders:install" />
+        <option value="responders_controller" />
         <option value="rspec:channel" />
         <option value="rspec:controller" />
         <option value="rspec:feature" />
@@ -418,9 +439,9 @@
           <RakeTaskImpl description="Run all specs in spec directory (excluding plugin specs)" fullCommand="spec" id="spec" />
           <RakeTaskImpl id="spec">
             <subtasks>
+              <RakeTaskImpl description="Run the code examples in spec/controllers" fullCommand="spec:controllers" id="controllers" />
               <RakeTaskImpl description="Run the code examples in spec/httparty" fullCommand="spec:httparty" id="httparty" />
               <RakeTaskImpl description="Run the code examples in spec/models" fullCommand="spec:models" id="models" />
-              <RakeTaskImpl description="Run the code examples in spec/requests" fullCommand="spec:requests" id="requests" />
               <RakeTaskImpl description="" fullCommand="spec:prepare" id="prepare" />
               <RakeTaskImpl description="" fullCommand="spec:statsetup" id="statsetup" />
             </subtasks>
