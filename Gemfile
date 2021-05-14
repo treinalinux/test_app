@@ -38,8 +38,9 @@ group :development, :test do
   gem 'faker'
   gem 'httparty'
   gem 'rspec-rails'
-  gem 'webmock'
+  gem 'shoulda-matchers'
   gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

@@ -31,6 +31,15 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # Added shoulda-matchers
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      # framework?
+      with.test_framework :rspec
+      # libraries?
+      with.library :rails
+    end
+  end
   # Added Time Helper
   config.include ActiveSupport::Testing::TimeHelpers
   # Added FactoryBot
