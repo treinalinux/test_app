@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :category do
-    description { 'MyString' }
+    # dynamic configuration with faker
+    description { Faker::Commerce.department }
   end
 end

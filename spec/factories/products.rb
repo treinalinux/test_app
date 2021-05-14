@@ -2,8 +2,9 @@
 
 FactoryBot.define do
   factory :product do
-    description { 'MyString' }
-    price { '9.99' }
-    category { nil }
+    # dynamic configuration with faker
+    description { Faker::Commerce.product_name }
+    price { Faker::Commerce.price }
+    category
   end
 end
