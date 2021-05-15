@@ -39,6 +39,8 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
 
+  # Capybara with devise
+  config.include Warden::Test::Helpers
   # Added devise
   config.include Devise::Test::ControllerHelpers, type: :controller
   # Added shoulda-matchers
