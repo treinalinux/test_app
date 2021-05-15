@@ -31,22 +31,6 @@ RSpec.describe CustomersController, type: :controller do
       @customer = create(:customer)
     end
 
-    it 'Content-Type JSON' do
-      customer_params = attributes_for(:customer)
-      sign_in @member
-      post :create, format: :json, params: { customer: customer_params }
-      # get :show, format: :json, params: { id: @customer.id }
-      # expect(response.content_type).to match(%r{application/json})
-      expect(response.content_type).to match(%r{application/json})
-    end
-
-    it 'Flash Notice' do
-      customer_params = attributes_for(:customer)
-      sign_in @member
-      post :create, params: { customer: customer_params }
-      expect(flash[:notice]).to match(/successfully created/)
-    end
-
     context '#create' do
       it 'with valid attributes' do
         customer_params = attributes_for(:customer)
@@ -54,6 +38,28 @@ RSpec.describe CustomersController, type: :controller do
         expect do
           post :create, params: { customer: customer_params }
         end.to change(Customer, :count).by(1)
+      end
+      it 'with invalid attributes' do
+        customer_params = attributes_for(:customer, address: nil)
+        sign_in @member
+        expect do
+          post :create, params: { customer: customer_params }
+        end.not_to change(Customer, :count)
+      end
+      it 'Flash Notice' do
+        customer_params = attributes_for(:customer)
+        sign_in @member
+        post :create, params: { customer: customer_params }
+        expect(flash[:notice]).to match(/successfully created/)
+      end
+
+      it 'Content-Type JSON' do
+        customer_params = attributes_for(:customer)
+        sign_in @member
+        post :create, format: :json, params: { customer: customer_params }
+        # get :show, format: :json, params: { id: @customer.id }
+        # expect(response.content_type).to match(%r{application/json})
+        expect(response.content_type).to match(%r{application/json})
       end
     end
     context '#show' do
