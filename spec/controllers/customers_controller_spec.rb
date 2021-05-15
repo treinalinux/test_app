@@ -31,6 +31,9 @@ RSpec.describe CustomersController, type: :controller do
       @customer = create(:customer)
     end
 
+    # Routes with should matchers
+    it { is_expected.to route(:get, '/customers').to(action: :index) }
+
     context '#create' do
       it 'with valid attributes' do
         customer_params = attributes_for(:customer)
